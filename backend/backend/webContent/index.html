@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-container">
+        
+        <div id="checkerBoard-Div">
+
+            <canvas id="CheckerBoard-Canvas" width="500" height="500"></canvas>
+            <div id="botInfo">
+
+                <div id="botsLocation">
+                    <p><b>BOTS LOCATIONS:</b></p>
+                    
+                    <p id="locationBot1"><b>Bot1:</b> <a>&lpar; 0, 0 &rpar;</a> </p>
+                    <p id="locationBot2"><b>Bot2:</b> <a>&lpar; 9, 0 &rpar;</a> </p>
+                    <p id="locationBot3"><b>Bot3:</b> <a>&lpar; 0, 9 &rpar;</a> </p>
+                    <p id="locationBot4"><b>Bot4:</b> <a>&lpar; 9, 9 &rpar;</a> </p>
+                </div>
+
+                <div id="pickUpQueue">
+                    <p><b id="pickUpQueue-title">BOTS QUEUE:</b></p>
+
+                    <p id="botQueue1"><b>Bot1:</b> <a>empty</a></p>
+                    <p id="botQueue2"><b>Bot2:</b> <a>empty</a></p>
+                    <p id="botQueue3"><b>Bot3:</b> <a>empty</a></p>
+                    <p id="botQueue4"><b>Bot4:</b> <a>empty</a></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="moveBots-GUI">
+
+            <!-- send <select-Bot: bot1..4> to cordinate (x: num, y: num) -->
+            <div id="moveBot"> 
+                send 
+                <select id="select-bot">
+                    <option value="0">bot1</option>
+                    <option value="1">bot2</option>
+                    <option value="2">bot3</option>
+                    <option value="3">bot4</option>
+                </select>
+                to coordinate &lpar; x:
+                <select id="goalX">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+
+                , y: 
+                <select id="goalY">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                &rpar;
+                <button onclick="sendCommand()">sendCommand</button>
+            </div> 
+
+            <!-- pickup from (x: num, y: num) and deliver to -->
+            <div id="pickupBot">
+                pickup at &lpar; x:
+                <select id="pickupX">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+
+                , y: 
+                <select id="pickupY">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                &rpar; and drop at &lpar; x:
+                <select id="dropX">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+
+                , y: 
+                <select id="dropY">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                &rpar;
+
+                <button onclick="addToQueue()">addToQueue</button>
+            </div>
+
+
+            <div>
+                <button id="start-button" onclick="toggleUpdate()">START</button>
+            </div>
+
+            <p id="debug"></p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+
+    <script type="text/javascript" src="moveBots/Bot.js"></script>
+    <script type="text/javascript" src="moveBots/CheckerBoard.js"></script>
+    <script type="text/javascript" src="moveBots/moveBots.js"></script>
+</body>
+</html>

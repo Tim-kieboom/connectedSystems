@@ -1,0 +1,132 @@
+body {
+  background-color: lightblue;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(52, 152, 219, 0.2);
+}
+
+button {
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 2px 5px 2px 4px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+select:hover {
+  border-color: #999;
+}
+
+select:focus {
+  border-color: #333;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#start-button {
+  background-color: red;
+  border-color: red;
+}
+
+#main-container {
+  position: absolute;
+  left: 20%;
+}
+
+#main-container .robot {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  position: absolute;
+}
+
+#main-container #checkerBoard-Div {
+  display: grid;
+  width: 501px;
+  height: 501px;
+  box-shadow: 2px 2px darkgray;
+}
+
+#main-container #checkerBoard-Div #CheckerBoard-Canvas {
+  grid-column: 1;
+  background-color: #ddd;
+  border: 1px solid #888;
+}
+
+#main-container #checkerBoard-Div #botInfo {
+  grid-column: 2;
+  width: 250px;
+  background-color: lightgray;
+  box-shadow: 1px 1px darkgray;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+#main-container #checkerBoard-Div #botInfo #botsLocation {
+  width: 150px;
+  margin: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.443);
+  box-shadow: 1px 1px gray;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+#main-container #checkerBoard-Div #botInfo #botsLocation b {
+  font-size: large;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#main-container #checkerBoard-Div #botInfo #pickUpQueue {
+  margin: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.443);
+  box-shadow: 1px 1px gray;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+#main-container #checkerBoard-Div #botInfo #pickUpQueue #pickUpQueue-title {
+  font-size: large;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#main-container #checkerBoard-Div #botInfo #pickUpQueue b {
+  font-size: medium;
+  -webkit-text-stroke-color: black;
+}
+
+#main-container #moveBots-GUI {
+  background-color: lightgray;
+  box-shadow: 1px 1px darkgray;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+#main-container #debug {
+  color: red;
+}
